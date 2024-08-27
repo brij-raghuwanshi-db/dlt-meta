@@ -10,8 +10,12 @@ from pyspark.sql.functions import col, lit, row_number
 from pyspark.sql.session import SparkSession
 from pyspark.sql.window import Window
 
+from databricks.labs.blueprint.logger import install_logger
+
+install_logger(level="INFO")
+
 logger = logging.getLogger("dlt-meta")
-logger.setLevel(logging.INFO)
+# logger.setLevel(logging.INFO)
 
 
 @dataclass

@@ -4,8 +4,12 @@ import argparse
 from src.onboard_dataflowspec import OnboardDataflowspec
 from pyspark.sql import SparkSession
 
+from databricks.labs.blueprint.logger import install_logger
+
+install_logger(level="INFO")
+
 logger = logging.getLogger("dlt-meta")
-logger.setLevel(logging.INFO)
+#logger.setLevel(logging.INFO)
 
 arguments = ["--onboard_layer",
              "--onboarding_file_path",

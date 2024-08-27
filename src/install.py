@@ -15,8 +15,12 @@ from databricks.sdk.service.sql import EndpointInfoWarehouseType
 from src.config import WorkspaceConfig
 from src.__about__ import __version__
 
+from databricks.labs.blueprint.logger import install_logger
 
-logger = logging.getLogger('databricks.labs.dltmeta')
+install_logger(level="INFO")
+
+logger = logging.getLogger("dlt-meta")
+# logger = logging.getLogger('databricks.labs.dltmeta')
 
 
 class WorkspaceInstaller:

@@ -16,8 +16,13 @@ from pyspark.sql.types import (
 from src.dataflow_spec import BronzeDataflowSpec, SilverDataflowSpec, DataflowSpecUtils
 from src.metastore_ops import DeltaPipelinesMetaStoreOps, DeltaPipelinesInternalTableOps
 
-logger = logging.getLogger('databricks.labs.dltmeta')
-logger.setLevel(logging.INFO)
+from databricks.labs.blueprint.logger import install_logger
+
+install_logger(level="INFO")
+
+logger = logging.getLogger("dlt-meta")
+# logger = logging.getLogger('databricks.labs.dltmeta')
+# logger.setLevel(logging.INFO)
 
 
 class OnboardDataflowspec:

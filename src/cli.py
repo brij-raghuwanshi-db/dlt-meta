@@ -15,7 +15,12 @@ from databricks.sdk.service.catalog import SchemasAPI
 from src import __about__
 from src.install import WorkspaceInstaller
 
-logger = logging.getLogger('databricks.labs.dltmeta')
+from databricks.labs.blueprint.logger import install_logger
+
+install_logger(level="INFO")
+
+logger = logging.getLogger("dlt-meta")
+# logger = logging.getLogger('databricks.labs.dltmeta')
 
 
 DLT_META_RUNNER_NOTEBOOK = """
