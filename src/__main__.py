@@ -4,10 +4,10 @@ import argparse
 from src.onboard_dataflowspec import OnboardDataflowspec
 from pyspark.sql import SparkSession
 
+from databricks.labs.blueprint.entrypoint import get_logger, run_main
 from databricks.labs.blueprint.logger import install_logger
-
 install_logger(level="INFO")
-
+# logger = get_logger(__file__)
 logger = logging.getLogger("dlt-meta")
 #logger.setLevel(logging.INFO)
 
@@ -67,4 +67,5 @@ def onboard_dataflowspecs(args):
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    run_main(main)

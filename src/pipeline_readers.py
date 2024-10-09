@@ -5,10 +5,10 @@ from pyspark.sql import DataFrame
 from pyspark.sql.types import StructType
 from pyspark.sql.functions import from_json, col
 
+from databricks.labs.blueprint.entrypoint import get_logger, run_main
 from databricks.labs.blueprint.logger import install_logger
-
 install_logger(level="INFO")
-
+# logger = get_logger(__file__)
 logger = logging.getLogger("dlt-meta")
 # logger = logging.getLogger('databricks.labs.dltmeta')
 # logger.setLevel(logging.INFO)

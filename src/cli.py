@@ -15,10 +15,10 @@ from databricks.sdk.service.catalog import SchemasAPI
 from src import __about__
 from src.install import WorkspaceInstaller
 
+from databricks.labs.blueprint.entrypoint import get_logger, run_main
 from databricks.labs.blueprint.logger import install_logger
-
 install_logger(level="INFO")
-
+# logger = get_logger(__file__)
 logger = logging.getLogger("dlt-meta")
 # logger = logging.getLogger('databricks.labs.dltmeta')
 

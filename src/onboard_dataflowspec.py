@@ -16,10 +16,10 @@ from pyspark.sql.types import (
 from src.dataflow_spec import BronzeDataflowSpec, SilverDataflowSpec, DataflowSpecUtils
 from src.metastore_ops import DeltaPipelinesMetaStoreOps, DeltaPipelinesInternalTableOps
 
+from databricks.labs.blueprint.entrypoint import get_logger, run_main
 from databricks.labs.blueprint.logger import install_logger
-
 install_logger(level="INFO")
-
+# logger = get_logger(__file__)
 logger = logging.getLogger("dlt-meta")
 # logger = logging.getLogger('databricks.labs.dltmeta')
 # logger.setLevel(logging.INFO)

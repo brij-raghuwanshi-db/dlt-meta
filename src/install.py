@@ -15,22 +15,22 @@ from databricks.sdk.service.sql import EndpointInfoWarehouseType
 from src.config import WorkspaceConfig
 from src.__about__ import __version__
 
+from databricks.labs.blueprint.entrypoint import get_logger, run_main
 from databricks.labs.blueprint.logger import install_logger
-
 install_logger(level="INFO")
-
+# logger = get_logger(__file__)
 logger = logging.getLogger("dlt-meta")
 # logger = logging.getLogger('databricks.labs.dltmeta')
 
 
 class WorkspaceInstaller:
-    def __init__(self, ws: WorkspaceClient, *, prefix: str = "dlt-meta", promtps: bool = True):
+    def __init__(self, ws: WorkspaceClient, *, prefix: str = "dlt-meta", prompts: bool = True):
         if "DATABRICKS_RUNTIME_VERSION" in os.environ:
             msg = "WorkspaceInstaller is not supposed to be executed in Databricks Runtime"
             raise SystemExit(msg)
         self._ws = ws
         self._prefix = prefix
-        self._prompts = promtps
+        self._prompts = prompts
         self._this_file = Path(__file__)
         self._override_clusters = {}
         self._dashboards = {}
