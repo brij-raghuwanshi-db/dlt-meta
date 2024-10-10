@@ -9,6 +9,9 @@ from databricks.labs.blueprint.logger import install_logger
 install_logger(level="INFO")
 # logger = get_logger(__file__)
 logger = logging.getLogger("dlt-meta")
+
+# " Made a change here"
+
 #logger.setLevel(logging.INFO)
 
 arguments = ["--onboard_layer",
